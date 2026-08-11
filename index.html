@@ -13,20 +13,21 @@
      hardcoded in THREE places below - og:url, og:image, twitter:image -
      and there is no variable tying them together. When this page moves to
      swingerz.net, change all three. Missing one fails silently: the page
-     still renders and only the preview card breaks. -->
+     still renders and only the preview card breaks. og:url is the site root
+     because this file is served as index.html, not a subpage. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swingerz">
 <meta property="og:title" content="Swingerz — pickleball and tennis crews in Austin">
 <meta property="og:description" content="Form groups. See open windows. No texts, just matches. Pickleball and tennis crews in Austin, TX.">
-<meta property="og:url" content="https://swingerz.vercel.app/landing.html">
-<meta property="og:image" content="https://swingerz.vercel.app/og-swingerz.png">
+<meta property="og:url" content="https://swingerz-web-site.vercel.app/">
+<meta property="og:image" content="https://swingerz-web-site.vercel.app/og-swingerz.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Swingerz mascot - a screaming tennis ball - beside the words Form groups. See open windows. No texts. Just matches.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Swingerz — pickleball and tennis crews in Austin">
 <meta name="twitter:description" content="Form groups. See open windows. No texts, just matches. Pickleball and tennis crews in Austin, TX.">
-<meta name="twitter:image" content="https://swingerz.vercel.app/og-swingerz.png">
+<meta name="twitter:image" content="https://swingerz-web-site.vercel.app/og-swingerz.png">
 <style>
 @font-face {
   font-family: 'DM Sans';
@@ -242,6 +243,9 @@ body{
      wrap leaves the text column narrower than the old 1040px one did. */
   #p3-hero-phone{display:block;order:1;flex:0 1 54%;width:auto;max-width:660px;}
 }
+/* Wide viewports: open the centre channel a little. Must stay a separate block
+   after the one above, or it would swallow the phone and text-order rules. */
+@media(min-width:1000px){#p3-hero-inner{gap:64px}}
 
 /* ── Physics ball ── */
 #phys-ball{
@@ -871,6 +875,10 @@ function launchConfetti(){
 /* Groups */
 .p3-groups{display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:680px){.p3-groups{grid-template-columns:1fr 1fr;gap:64px;align-items:start}}
+/* Wide viewports: open the centre channel a little. The wrap caps at 960px,
+   so this comes out of the columns rather than out of new space - kept small
+   for that reason. */
+@media(min-width:1000px){.p3-groups{gap:96px}}
 /* Scheduling: text above cards on mobile, cards-left/text-right on desktop */
 .p3-sched-text{order:1}.p3-sched-cards{order:2}
 @media(min-width:680px){.p3-sched-text{order:2}.p3-sched-cards{order:1}}
