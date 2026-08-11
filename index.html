@@ -245,7 +245,7 @@ body{
 }
 /* Wide viewports: open the centre channel a little. Must stay a separate block
    after the one above, or it would swallow the phone and text-order rules. */
-@media(min-width:1000px){#p3-hero-inner{gap:80px}}
+@media(min-width:1000px){#p3-hero-inner{gap:104px}#p3-hero-phone{flex-basis:50%}}
 
 /* ── Physics ball ── */
 #phys-ball{
@@ -878,7 +878,7 @@ function launchConfetti(){
 /* Wide viewports: open the centre channel a little. The wrap caps at 960px,
    so this comes out of the columns rather than out of new space - kept small
    for that reason. */
-@media(min-width:1000px){.p3-groups{gap:112px}}
+@media(min-width:1000px){.p3-groups{gap:140px}}
 /* Scheduling: text above cards on mobile, cards-left/text-right on desktop */
 .p3-sched-text{order:1}.p3-sched-cards{order:2}
 @media(min-width:680px){.p3-sched-text{order:2}.p3-sched-cards{order:1}}
